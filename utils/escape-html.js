@@ -10,7 +10,7 @@ var rAmp = /&/g,
     rQuot = /\"/g,
     hChars =/[&<>\"\']/;
 
-var isEscapedBlock = /(\/\*.*\s+\*\/)/g;
+var isEscapedBlock = /(\/\*\s*.*\s*\*\/)/m;
 
 function coerceToString(val) {
   return String((val === null || val === undefined) ? '' : val);
@@ -33,7 +33,7 @@ module.exports = function(str) {
 
   substrings = substrings.map(function(elem) {
     if (isEscapedBlock.test(elem))
-      return elem.slice(3, -3);
+      return elem.slice(2, -2);
     else
       return escape(elem);
   });

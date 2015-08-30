@@ -9,7 +9,6 @@ var at          = require('gulp-asset-transform');
 var paths = {
   fonts    : 'src/fonts/*.*',
   index    : 'src/index.html',
-  js       : ['utils/*.js'],
   less     : 'src/less/*.less',
   template : 'src/template.html'
 };
@@ -71,7 +70,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.template, paths.less, paths.js], ['transform']);
+  gulp.watch([paths.index, paths.template, paths.less], ['transform']);
   gulp.watch([paths.fonts], ['copy-assets']);
   gulp.watch([paths.less], ['less-lint']);
 });
