@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate-ninja",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://github.com/orbitbot/boilerplate-ninja",
+  "authors": [
+    "Patrik Johnson <patrik@zebros.fi>"
+  ],
+  "description": "html5 boilerplate generator",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton-less": "*",
+    "normalize.css": "~3.0.3"
+  }
+}
