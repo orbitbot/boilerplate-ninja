@@ -1,13 +1,17 @@
-var gulp          = require('gulp');
-var $             = require('gulp-load-plugins')();
-var _             = require('lodash');
-var browserSync   = require('browser-sync');
-var at            = require('gulp-asset-transform');
+var fs          = require('fs');
+var gulp        = require('gulp');
+var $           = require('gulp-load-plugins')();
+var _           = require('lodash');
+var escape      = require('./utils/escape-html.js');
+var browserSync = require('browser-sync');
+var at          = require('gulp-asset-transform');
 
 var paths = {
-  fonts       : 'src/fonts/*.*',
-  index       : 'src/index.html',
-  less        : 'src/less/*.less'
+  fonts    : 'src/fonts/*.*',
+  index    : 'src/index.html',
+  js       : ['utils/*.js'],
+  less     : 'src/less/*.less',
+  template : 'src/template.html'
 };
 
 var release;
@@ -24,7 +28,7 @@ gulp.task('copy-fonts', function() {
     .pipe(dest('fonts'));
 });
 
-gulp.task('at-build', function() {
+gulp.task('transform', function() {
   return gulp.src(paths.index)
     .pipe($.plumber())
     .pipe(at({
@@ -41,6 +45,9 @@ gulp.task('at-build', function() {
         }
       }
     }))
+    .pipe($.replace(/<!-- template -->/g, function() {
+      return escape(fs.readFileSync(paths.template, 'utf8'));
+    }))
     .pipe(dest(''))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -51,7 +58,6 @@ gulp.task('less-lint', function() {
     .pipe($.recess())
     .pipe($.recess.reporter());
 });
-
 
 
 gulp.task('server', function() {
@@ -65,13 +71,13 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.less], ['at-build']);
+  gulp.watch([paths.index, paths.template, paths.less, paths.js], ['transform']);
   gulp.watch([paths.fonts], ['copy-assets']);
   gulp.watch([paths.less], ['less-lint']);
 });
 
 gulp.task('copy-assets', ['copy-fonts']);
-gulp.task('build', ['copy-assets', 'at-build']);
+gulp.task('build', ['copy-assets', 'transform']);
 gulp.task('develop', ['build', 'server', 'watch']);
 
 
