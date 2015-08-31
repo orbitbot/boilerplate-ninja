@@ -1,30 +1,43 @@
 // based on Twitter's Hogan.js
 // https://github.com/twitter/hogan.js
 
-var extract = require('extract-comments');
+var ampersand     = /&/g,
+    lessThan      = /</g,
+    greaterThan   = />/g,
+    aphostrophe   = /\'/g,
+    quotation     = /\"/g,
+    leadingSpaces = /^\s+/,
+    singleSpace   = /\s/g,
+    lineBreak     = /\r\n|\n|\r/g,
+    escChars      = /[&<>\"\']/;
 
-var rAmp = /&/g,
-    rLt = /</g,
-    rGt = />/g,
-    rApos =/\'/g,
-    rQuot = /\"/g,
-    hChars =/[&<>\"\']/;
-
-var isEscapedBlock = /(\/\*\s*.*\s*\*\/)/m;
+var isEscapedBlock = /^(\s*\/\*\s*.*\s*\*\/\s*[\r\n|\n|\r])/m;
 
 function coerceToString(val) {
   return String((val === null || val === undefined) ? '' : val);
 }
 
 function escape(str) {
-  return hChars.test(str) ?
+  return escChars.test(str) ?
     str
-      .replace(rAmp,'&amp;')
-      .replace(rLt,'&lt;')
-      .replace(rGt,'&gt;')
-      .replace(rApos,'&#39;')
-      .replace(rQuot, '&quot;') :
+      .replace(ampersand,   '&amp;')
+      .replace(lessThan,    '&lt;')
+      .replace(greaterThan, '&gt;')
+      .replace(aphostrophe, '&#39;')
+      .replace(quotation,   '&quot;') :
     str;
+}
+
+function lineFormat(str) {
+  var lines = str.split(lineBreak);
+  lines = lines.map(function(elem) {
+    return '\n<span>' + elem.replace(leadingSpaces, function(spaces) {
+                          return spaces.replace(singleSpace, '&nbsp;');
+                        }) +
+           '<br></span>';
+  });
+
+  return lines.join('');
 }
 
 module.exports = function(str) {
@@ -33,9 +46,9 @@ module.exports = function(str) {
 
   substrings = substrings.map(function(elem) {
     if (isEscapedBlock.test(elem))
-      return elem.slice(2, -2);
+      return elem.trim().slice(2, -2);
     else
-      return escape(elem);
+      return lineFormat(escape(elem));
   });
 
   return substrings.join('');
