@@ -3,3 +3,14 @@ code {
   padding: 1rem 1.5rem;
   margin: 1em .2rem;
 }
+
+.expandable {
+  display: none;
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ code [id=read-more-expand] {
+  background: green;
+  display: block;
+  visibility: visible;
+}
