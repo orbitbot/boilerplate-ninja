@@ -9,8 +9,13 @@ code {
   visibility: hidden;
 }
 
-input[type=checkbox]:checked ~ code [id=read-more-expand] {
-  background: green;
+input[type=checkbox] {
+  display:none;
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked + span {
   display: block;
+  background: green;
   visibility: visible;
 }

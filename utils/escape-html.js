@@ -1,17 +1,19 @@
 // based on Twitter's Hogan.js
 // https://github.com/twitter/hogan.js
 
-var ampersand     = /&/g,
-    lessThan      = /</g,
-    greaterThan   = />/g,
-    aphostrophe   = /\'/g,
-    quotation     = /\"/g,
-    leadingSpaces = /^\s+/,
-    singleSpace   = /\s/g,
-    lineBreak     = /\r\n|\n|\r/g,
-    escChars      = /[&<>\"\']/;
+var ampersand        = /&/g,
+    lessThan         = /</g,
+    greaterThan      = />/g,
+    aphostrophe      = /\'/g,
+    quotation        = /\"/g,
+    leadingSpaces    = /^\s+/,
+    singleSpace      = /\s/g,
+    trailingNewlines = /\s+$/g,
+    commentDelimiter = /(^\/\/\s|\s*\n\/\/\s*)/g,
+    lineBreak        = /\r\n|\n|\r/g,
+    escChars         = /[&<>\"\']/;
 
-var isEscapedBlock = /^(\s*\/\*\s*.*\s*\*\/\s*[\r\n|\n|\r])/m;
+var isEscapedBlock = /^(\/\/[\s\S]*?(?:^[^\/]))/m;
 
 function coerceToString(val) {
   return String((val === null || val === undefined) ? '' : val);
@@ -46,9 +48,9 @@ module.exports = function(str) {
 
   substrings = substrings.map(function(elem) {
     if (isEscapedBlock.test(elem))
-      return elem.trim().slice(2, -2);
+      return elem.replace(commentDelimiter, '');
     else
-      return lineFormat(escape(elem));
+      return lineFormat(escape(elem.replace(trailingNewlines, '')));
   });
 
   return substrings.join('');
