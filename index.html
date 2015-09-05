@@ -1,27 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
   <meta charset="utf-8">
   <meta name="description" content="html5 generator ninja">
   <title>Boilerplate Ninja - the sneaky HTML5 generator</title>
 
-  <link rel="stylesheet" type="text/css" href="css/site-05be0fba9c.css">
+  <link rel="stylesheet" type="text/css" href="css/site-e7eea8eb87.css">
+  <style>
+  
+    input[type=checkbox][id=x-ua-compatible]:checked ~ code [id=x-ua-compatible-expand] {
+      display: block;
+      visibility: visible;
+    }
+  
+    input[type=checkbox][id=common-meta]:checked ~ code [id=common-meta-expand] {
+      display: block;
+      visibility: visible;
+    }
+  
+    input[type=checkbox][id=favicon]:checked ~ code [id=favicon-expand] {
+      display: block;
+      visibility: visible;
+    }
+  
+  </style>
  </head>
  <body>
 
-<input type="checkbox" id="read-more" role="button"> Expand stuff
+
+  <input type="checkbox" id="x-ua-compatible" role="button">
+  <label class="button" for="x-ua-compatible">x-ua-compatible</label>
+
+  <input type="checkbox" id="common-meta" role="button">
+  <label class="button" for="common-meta">common meta tags</label>
+
+  <input type="checkbox" id="favicon" role="button">
+  <label class="button" for="favicon">favicon</label>
+
 
 <code>
-<span>&lt;!DOCTYPE html&gt;<br></span>
-<span>&lt;html&gt;<br></span>
-<span>&nbsp;&nbsp;&lt;head&gt;<br></span>
-<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;utf-8&quot;&gt;<br></span>
-<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br></span>
-<span>&nbsp;&nbsp;&lt;/head&gt;<br></span>
-<span>&nbsp;&nbsp;&lt;body&gt;<br></span>
-<span><br></span> <span id="read-more-expand" class="expandable">"The first case," said he. Then, putting his hand to his head, he exclaimed, "Heh! This is not my wig!"</span> 
-<span>&nbsp;&nbsp;&lt;/body&gt;<br></span>
-<span>&lt;/html&gt;<br></span></code>
+<span>&lt;!DOCTYPE html&gt;</span><br>
+<span>&lt;html&gt;</span><br>
+<span>&nbsp;&nbsp;&lt;head&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;utf-8&quot;&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;</span><br>   
+      <span id="x-ua-compatible-expand" class="expandable">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</span>
+   
+      <span id="common-meta-expand" class="expandable">&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;&lt;meta name=&quot;description&quot; content=&quot;description here&quot;&gt;&lt;meta name=&quot;keywords&quot; content=&quot;keywords here&quot;&gt;</span>
+   
+      <span id="favicon-expand" class="expandable">&lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;</span>
+   
+ 
+<span>&nbsp;&lt;/head&gt;</span><br>
+<span>&nbsp;&nbsp;&lt;body&gt;</span><br>
+<span></span><br>
+<span>&nbsp;&nbsp;&lt;/body&gt;</span><br>
+<span>&lt;/html&gt;</span><br></code>
 
  </body>
 </html>
