@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
   <meta charset="utf-8">
   <meta name="description" content="html5 generator ninja">
@@ -10,11 +10,21 @@
   <link rel="stylesheet" href="../bower_components/skeleton-less/less/skeleton.less">
   <link rel="stylesheet" href="less/site.less">
   <!-- at:end -->
+  <style>
+  <% _.each(head.tags, function(tag) { %>
+    input[type=checkbox][id=<%- tag.id ? tag.id : tag.name %>]:checked ~ code [id=<%- tag.id ? tag.id : tag.name %>-expand] {
+      display: block;
+      visibility: visible;
+    }
+  <% }) %>
+  </style>
  </head>
  <body>
 
-<input type="checkbox" id="read-more" role="button">
-<label class="button" for="read-more">Expand block</label>
+<% _.each(head.tags, function(tag) { %>
+  <input type="checkbox" id="<%- tag.id ? tag.id : tag.name %>" role="button">
+  <label class="button" for="<%- tag.id ? tag.id : tag.name %>"><%- tag.name %></label>
+<% }) %>
 
 <code><!-- template --></code>
 

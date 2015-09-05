@@ -1,0 +1,27 @@
+{
+  "head": {
+    "tags": [
+      { "name": "x-ua-compatible",  "markup": "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">" },
+      { "name": "common meta tags", "markup": "<meta name=\"author\" content=\"name\"><meta name=\"description\" content=\"description here\"><meta name=\"keywords\" content=\"keywords here\">", "id": "common-meta" },
+      { "name": "favicon",          "markup": "<link rel=\"icon\" href=\"/favicon.ico\" />" }
+    ],
+    "css": [
+      {}
+    ],
+    "javascript": [
+
+    ]
+  },
+  "body": {
+    "frameworks": [
+
+    ],
+    "graphic": [
+
+    ],
+    "javascript": [
+      {}
+    ]
+    
+  }
+}

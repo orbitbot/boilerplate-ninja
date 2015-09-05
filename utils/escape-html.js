@@ -7,7 +7,6 @@ var ampersand        = /&/g,
     aphostrophe      = /\'/g,
     quotation        = /\"/g,
     leadingSpaces    = /^\s+/,
-    singleSpace      = /\s/g,
     trailingNewlines = /\s+$/g,
     commentDelimiter = /(^\/\/\s|\s*\n\/\/\s*)/g,
     lineBreak        = /\r\n|\n|\r/g,
@@ -30,13 +29,19 @@ function escape(str) {
     str;
 }
 
+function charToNonbreaking(str) {
+  return str.replace(/./g, '&nbsp;');
+}
+
+function charToSpace(str) {
+  return str.replace(/./g, ' ');
+}
+
+
 function lineFormat(str) {
   var lines = str.split(lineBreak);
   lines = lines.map(function(elem) {
-    return '\n<span>' + elem.replace(leadingSpaces, function(spaces) {
-                          return spaces.replace(singleSpace, '&nbsp;');
-                        }) +
-           '<br></span>';
+    return '\n<span>' + elem.replace(leadingSpaces, charToNonbreaking) + '</span><br>';
   });
 
   return lines.join('');
@@ -48,7 +53,7 @@ module.exports = function(str) {
 
   substrings = substrings.map(function(elem) {
     if (isEscapedBlock.test(elem))
-      return elem.replace(commentDelimiter, '');
+      return elem.replace(commentDelimiter, charToSpace);
     else
       return lineFormat(escape(elem.replace(trailingNewlines, '')));
   });

@@ -7,6 +7,7 @@ var browserSync = require('browser-sync');
 var at          = require('gulp-asset-transform');
 
 var paths = {
+  config   : './src/config.json',
   fonts    : 'src/fonts/*.*',
   index    : 'src/index.html',
   less     : 'src/less/*.less',
@@ -47,6 +48,7 @@ gulp.task('transform', function() {
     .pipe($.replace(/<!-- template -->/g, function() {
       return escape(fs.readFileSync(paths.template, 'utf8'));
     }))
+    .pipe($.template(require(paths.config)))
     .pipe(dest(''))
     .pipe(browserSync.reload({ stream: true }));
 });
