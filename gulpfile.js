@@ -11,6 +11,7 @@ var paths = {
   fonts    : 'src/fonts/*.*',
   index    : 'src/index.html',
   less     : 'src/less/*.less',
+  markup   : 'src/markup/*.html',
   template : 'src/template.html'
 };
 
@@ -19,7 +20,6 @@ var release;
 function dest(suffix) {
   return gulp.dest(release ? 'release/' + suffix : 'develop/' + suffix);
 }
-
 
 gulp.task('copy-fonts', function() {
   return gulp.src(paths.fonts)
@@ -48,7 +48,17 @@ gulp.task('transform', function() {
     .pipe($.replace(/<!-- template -->/g, function() {
       return escape(fs.readFileSync(paths.template, 'utf8'));
     }))
-    .pipe($.template(require(paths.config)))
+    .pipe($.data(function() {
+      var config = JSON.parse(fs.readFileSync(paths.config)); // manual version to avoid require cache
+
+      _.each(config.head.tags, function(elem) {
+        elem.markup = fs.readFileSync('./src/markup/' + elem.markup, 'utf8');
+      });
+
+      config.escape = escape;
+      return config;
+    }))
+    .pipe($.template())
     .pipe(dest(''))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -72,7 +82,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.template, paths.less], ['transform']);
+  gulp.watch([paths.index, paths.template, paths.less, paths.markup], ['transform']);
   gulp.watch([paths.fonts], ['copy-assets']);
   gulp.watch([paths.less], ['less-lint']);
 });

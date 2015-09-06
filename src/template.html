@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
 // <% _.each(head.tags, function(tag) { %>
-//    <span id="<%- tag.id ? tag.id : tag.name %>-expand" class="expandable"><%- tag.markup %></span>
+//   <span id="<%- tag.id ? tag.id : tag.name %>-expand" class="expandable"><%= escape(tag.markup) %></span>
 // <% }) %>
   </head>
   <body>
