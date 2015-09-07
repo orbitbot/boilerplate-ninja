@@ -5,25 +5,25 @@
     <meta name="description" content="html5 generator ninja">
     <title>Boilerplate Ninja - the sneaky HTML5 generator</title>
 
-      <!-- at:css >> css/site.css -->
-      <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
-      <link rel="stylesheet" href="../bower_components/skeleton-less/less/skeleton.less">
-      <link rel="stylesheet" href="less/site.less">
-      <!-- at:end -->
-      <style>
-      <% _.each(head.tags, function(tag) { %>
-        input[type=checkbox][id=<%- tag.id ? tag.id : tag.name %>]:checked ~ code [id=<%- tag.id ? tag.id : tag.name %>-expand] {
-          display: block;
-          visibility: visible;
-        }
-      <% }) %>
+    <!-- at:css >> css/site.css -->
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="../bower_components/skeleton-less/less/skeleton.less">
+    <link rel="stylesheet" href="less/site.less">
+    <!-- at:end -->
+    <style>
+    <% _.each(sections, function(elem) { %>
+      input[type=checkbox][id=<%- elem.id ? elem.id : elem.name %>]:checked ~ code [id=<%- elem.id ? elem.id : elem.name %>-expand] {
+        display: block;
+        visibility: visible;
+      }
+    <% }) %>
     </style>
   </head>
   <body>
 
-<% _.each(head.tags, function(tag) { %>
-    <input type="checkbox" id="<%- tag.id ? tag.id : tag.name %>" role="button">
-    <label class="button" for="<%- tag.id ? tag.id : tag.name %>"><%- tag.name %></label>
+<% _.each(sections, function(elem) { %>
+    <input type="checkbox" id="<%- elem.id ? elem.id : elem.name %>" role="button">
+    <label class="button" for="<%- elem.id ? elem.id : elem.name %>"><%- elem.name %></label>
 <% }) %>
 
 <code><!-- template --></code>

@@ -28,6 +28,11 @@ gulp.task('copy-fonts', function() {
     .pipe(dest('fonts'));
 });
 
+function loadHTML(elem) {
+  elem.markup = fs.readFileSync('./src/markup/' + elem.markup, 'utf8');
+}
+
+
 gulp.task('transform', function() {
   return gulp.src(paths.index)
     .pipe($.plumber())
@@ -51,11 +56,19 @@ gulp.task('transform', function() {
     .pipe($.data(function() {
       var config = JSON.parse(fs.readFileSync(paths.config)); // manual version to avoid require cache
 
-      _.each(config.head.tags, function(elem) {
-        elem.markup = fs.readFileSync('./src/markup/' + elem.markup, 'utf8');
-      });
+      _.each(config.head.tags       , loadHTML);
+      _.each(config.head.css        , loadHTML);
+      _.each(config.head.javascript , loadHTML);
+      _.each(config.body.frameworks , loadHTML);
+      _.each(config.body.graphics   , loadHTML);
+      _.each(config.body.javascript , loadHTML);
 
       config.escape = escape;
+      config.sections = config.head.tags.concat(config.head.css)
+                                        .concat(config.head.javascript)
+                                        .concat(config.body.frameworks)
+                                        .concat(config.body.graphics)
+                                        .concat(config.body.javascript);
       return config;
     }))
     .pipe($.template())
@@ -82,7 +95,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.template, paths.less, paths.markup], ['transform']);
+  gulp.watch(['src/**'], ['transform']);
   gulp.watch([paths.fonts], ['copy-assets']);
   gulp.watch([paths.less], ['less-lint']);
 });

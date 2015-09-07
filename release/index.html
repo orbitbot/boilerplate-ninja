@@ -1,41 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8">
-  <meta name="description" content="html5 generator ninja">
-  <title>Boilerplate Ninja - the sneaky HTML5 generator</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="html5 generator ninja">
+    <title>Boilerplate Ninja - the sneaky HTML5 generator</title>
 
-  <link rel="stylesheet" type="text/css" href="css/site-e7eea8eb87.css">
-  <style>
-  
-    input[type=checkbox][id=x-ua-compatible]:checked ~ code [id=x-ua-compatible-expand] {
-      display: block;
-      visibility: visible;
-    }
-  
-    input[type=checkbox][id=common-meta]:checked ~ code [id=common-meta-expand] {
-      display: block;
-      visibility: visible;
-    }
-  
-    input[type=checkbox][id=favicon]:checked ~ code [id=favicon-expand] {
-      display: block;
-      visibility: visible;
-    }
-  
-  </style>
- </head>
- <body>
+    <link rel="stylesheet" type="text/css" href="css/site-e7eea8eb87.css">
+    <style>
+    
+      input[type=checkbox][id=common-meta]:checked ~ code [id=common-meta-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=x-ua-compatible]:checked ~ code [id=x-ua-compatible-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=favicon]:checked ~ code [id=favicon-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=normalize]:checked ~ code [id=normalize-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=bootstrap]:checked ~ code [id=bootstrap-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=foundation]:checked ~ code [id=foundation-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=Pure]:checked ~ code [id=Pure-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=Skeleton]:checked ~ code [id=Skeleton-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=linkedCss]:checked ~ code [id=linkedCss-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=inlineCss]:checked ~ code [id=inlineCss-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=gAnalytics]:checked ~ code [id=gAnalytics-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=inlineJs]:checked ~ code [id=inlineJs-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=AngularJS]:checked ~ code [id=AngularJS-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=backbone]:checked ~ code [id=backbone-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=bootstrapJs]:checked ~ code [id=bootstrapJs-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=ember]:checked ~ code [id=ember-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=foundationJs]:checked ~ code [id=foundationJs-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=jQuery]:checked ~ code [id=jQuery-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=reactJs]:checked ~ code [id=reactJs-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=d3]:checked ~ code [id=d3-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=highcharts]:checked ~ code [id=highcharts-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=linkedJs]:checked ~ code [id=linkedJs-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=domReady]:checked ~ code [id=domReady-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+      input[type=checkbox][id=pageload]:checked ~ code [id=pageload-expand] {
+        display: block;
+        visibility: visible;
+      }
+    
+    </style>
+  </head>
+  <body>
 
 
-  <input type="checkbox" id="x-ua-compatible" role="button">
-  <label class="button" for="x-ua-compatible">x-ua-compatible</label>
+    <input type="checkbox" id="common-meta" role="button">
+    <label class="button" for="common-meta">common meta tags</label>
 
-  <input type="checkbox" id="common-meta" role="button">
-  <label class="button" for="common-meta">common meta tags</label>
+    <input type="checkbox" id="x-ua-compatible" role="button">
+    <label class="button" for="x-ua-compatible">x-ua-compatible</label>
 
-  <input type="checkbox" id="favicon" role="button">
-  <label class="button" for="favicon">favicon</label>
+    <input type="checkbox" id="favicon" role="button">
+    <label class="button" for="favicon">favicon</label>
+
+    <input type="checkbox" id="normalize" role="button">
+    <label class="button" for="normalize">normalize.css</label>
+
+    <input type="checkbox" id="bootstrap" role="button">
+    <label class="button" for="bootstrap">Bootstrap</label>
+
+    <input type="checkbox" id="foundation" role="button">
+    <label class="button" for="foundation">Foundation</label>
+
+    <input type="checkbox" id="Pure" role="button">
+    <label class="button" for="Pure">Pure</label>
+
+    <input type="checkbox" id="Skeleton" role="button">
+    <label class="button" for="Skeleton">Skeleton</label>
+
+    <input type="checkbox" id="linkedCss" role="button">
+    <label class="button" for="linkedCss">linked css</label>
+
+    <input type="checkbox" id="inlineCss" role="button">
+    <label class="button" for="inlineCss">inline css</label>
+
+    <input type="checkbox" id="gAnalytics" role="button">
+    <label class="button" for="gAnalytics">Google Analytics</label>
+
+    <input type="checkbox" id="inlineJs" role="button">
+    <label class="button" for="inlineJs">inline js</label>
+
+    <input type="checkbox" id="AngularJS" role="button">
+    <label class="button" for="AngularJS">AngularJS</label>
+
+    <input type="checkbox" id="backbone" role="button">
+    <label class="button" for="backbone">Backbone.js</label>
+
+    <input type="checkbox" id="bootstrapJs" role="button">
+    <label class="button" for="bootstrapJs">Bootstrap JS</label>
+
+    <input type="checkbox" id="ember" role="button">
+    <label class="button" for="ember">Ember.js</label>
+
+    <input type="checkbox" id="foundationJs" role="button">
+    <label class="button" for="foundationJs">Foundation JS</label>
+
+    <input type="checkbox" id="jQuery" role="button">
+    <label class="button" for="jQuery">jQuery</label>
+
+    <input type="checkbox" id="reactJs" role="button">
+    <label class="button" for="reactJs">React.js</label>
+
+    <input type="checkbox" id="d3" role="button">
+    <label class="button" for="d3">D3.js</label>
+
+    <input type="checkbox" id="highcharts" role="button">
+    <label class="button" for="highcharts">highcharts.js</label>
+
+    <input type="checkbox" id="linkedJs" role="button">
+    <label class="button" for="linkedJs">Linked js</label>
+
+    <input type="checkbox" id="domReady" role="button">
+    <label class="button" for="domReady">DOM-Ready js</label>
+
+    <input type="checkbox" id="pageload" role="button">
+    <label class="button" for="pageload">Page loaded js</label>
 
 
 <code>
@@ -44,18 +212,120 @@
 <span>&nbsp;&nbsp;&lt;head&gt;</span><br>
 <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;utf-8&quot;&gt;</span><br>
 <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;</span><br>   
-      <span id="x-ua-compatible-expand" class="expandable">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</span>
+     <span id="common-meta-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name=&quot;description&quot; content=&quot;description here&quot;&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name=&quot;keywords&quot; content=&quot;keywords here&quot;&gt;</span><br></span>
    
-      <span id="common-meta-expand" class="expandable">&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;&lt;meta name=&quot;description&quot; content=&quot;description here&quot;&gt;&lt;meta name=&quot;keywords&quot; content=&quot;keywords here&quot;&gt;</span>
+     <span id="x-ua-compatible-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</span><br></span>
    
-      <span id="favicon-expand" class="expandable">&lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;</span>
+     <span id="favicon-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot;&gt;</span><br></span>
+   
+     <span id="normalize-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css&quot;&gt;</span><br></span>
+   
+     <span id="bootstrap-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css&quot;&gt;</span><br></span>
+   
+     <span id="foundation-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css&quot;&gt;</span><br></span>
+   
+     <span id="Pure-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot;&gt;</span><br></span>
+   
+     <span id="Skeleton-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css&quot;&gt;</span><br></span>
+   
+     <span id="linkedCss-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br></span>
+   
+     <span id="inlineCss-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;</span><br></span>
+   
+     <span id="gAnalytics-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;(function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;})(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);</span><br>
+<span></span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;ga(&#39;create&#39;, &#39;UA-XXXX-Y&#39;, &#39;auto&#39;);</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;ga(&#39;send&#39;, &#39;pageview&#39;);</span><br>
+<span></span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</span><br></span>
+   
+     <span id="inlineJs-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</span><br></span>
    
  
-<span>&nbsp;&lt;/head&gt;</span><br>
-<span>&nbsp;&nbsp;&lt;body&gt;</span><br>
+<span>&nbsp;&nbsp;&lt;/head&gt;</span><br>
+<span>&nbsp;&nbsp;&lt;body&gt;</span><br>   <br>
+   
+     <span id="AngularJS-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="backbone-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="bootstrapJs-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="ember-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/ember.js/2.0.1/ember.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="foundationJs-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="jQuery-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="reactJs-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="d3-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="highcharts-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.1.8/highcharts.js&quot;&gt;&lt;/script&gt;</span><br></span>
+   
+     <span id="linkedJs-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;site.js&quot;&gt;</span><br></span>
+   
+     <span id="domReady-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function ready() {</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (document.addEventListener)</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;DOMContentLoaded&quot;, ready, false);</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (document.attachEvent)</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.attachEvent(&quot;onreadystatechange&quot;, ready);</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.onload = ready;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</span><br></span>
+   
+     <span id="pageload-expand" class="expandable">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function load() {</span><br>
 <span></span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (window.addEventListener)</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.addEventListener(&quot;load&quot;, autorun, false);</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (window.attachEvent)</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.attachEvent(&quot;onload&quot;, autorun);</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.onload = autorun;</span><br>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</span><br></span>
+   
+ 
 <span>&nbsp;&nbsp;&lt;/body&gt;</span><br>
 <span>&lt;/html&gt;</span><br></code>
 
- </body>
+  </body>
 </html>

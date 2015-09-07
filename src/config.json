@@ -6,22 +6,37 @@
       { "name": "favicon",          "markup": "favicon.html"                             }
     ],
     "css": [
-      {}
+      { "name": "normalize.css", "markup": "normalize.css.html",  "id": "normalize"  },
+      { "name": "Bootstrap",     "markup": "bootstrap.css.html",  "id": "bootstrap"  },
+      { "name": "Foundation",    "markup": "foundation.css.html", "id": "foundation" },
+      { "name": "Pure",          "markup": "pure.css.html"                           },
+      { "name": "Skeleton",      "markup": "skeleton.css.html"                       },
+      { "name": "linked css",    "markup": "linked.css.html" ,    "id": "linkedCss"  },
+      { "name": "inline css",    "markup": "inline.css.html" ,    "id": "inlineCss"  }
     ],
     "javascript": [
-
+      { "name": "Google Analytics", "markup": "ga.js.html",     "id": "gAnalytics" },
+      { "name": "inline js",        "markup": "inline.js.html", "id": "inlineJs"   }
     ]
   },
   "body": {
     "frameworks": [
-
+      { "name": "AngularJS",     "markup": "angularjs.html"                           },
+      { "name": "Backbone.js",   "markup": "backbone.js.html",   "id": "backbone"     },
+      { "name": "Bootstrap JS",  "markup": "bootstrap.js.html",  "id": "bootstrapJs"  },
+      { "name": "Ember.js",      "markup": "ember.js.html",      "id": "ember"        },
+      { "name": "Foundation JS", "markup": "foundation.js.html", "id": "foundationJs" },
+      { "name": "jQuery",        "markup": "jquery.js.html"                           },
+      { "name": "React.js",      "markup": "react.js.html",      "id": "reactJs"      }
     ],
-    "graphic": [
-
+    "graphics": [
+      { "name": "D3.js",         "markup": "d3.js.html",         "id": "d3"         },
+      { "name": "highcharts.js", "markup": "highcharts.js.html", "id": "highcharts" }
     ],
     "javascript": [
-      {}
+      { "name": "Linked js",      "markup": "linked.js.html",   "id": "linkedJs" },
+      { "name": "DOM-Ready js",   "markup": "domready.js.html", "id": "domReady" },
+      { "name": "Page loaded js", "markup": "pageload.js.html", "id": "pageload" }
     ]
-    
   }
 }

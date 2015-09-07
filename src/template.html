@@ -3,11 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-// <% _.each(head.tags, function(tag) { %>
-//   <span id="<%- tag.id ? tag.id : tag.name %>-expand" class="expandable"><%= escape(tag.markup) %></span>
+// <% _.each(head.tags.concat(head.css).concat(head.javascript), function(elem) { %>
+//   <span id="<%- elem.id ? elem.id : elem.name %>-expand" class="expandable"><%= escape(elem.markup) %></span>
 // <% }) %>
-  </head>
+   </head>
   <body>
-
-  </body>
+// <br>
+// <% _.each(body.frameworks.concat(body.graphics).concat(body.javascript), function(elem) { %>
+//   <span id="<%- elem.id ? elem.id : elem.name %>-expand" class="expandable"><%= escape(elem.markup) %></span>
+// <% }) %>
+   </body>
 </html>
