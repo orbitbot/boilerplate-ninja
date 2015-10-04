@@ -21,12 +21,14 @@
   </head>
   <body>
 
+<div class="container">
 <% _.each(sections, function(elem) { %>
     <input type="checkbox" id="<%- elem.id ? elem.id : elem.name %>" role="button">
     <label class="button" for="<%- elem.id ? elem.id : elem.name %>"><%- elem.name %></label>
 <% }) %>
 
 <code><!-- template --></code>
+</div>
 
   </body>
 </html>
