@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="html5 generator ninja">
@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../bower_components/skeleton-less/less/skeleton.less">
     <link rel="stylesheet" href="less/site.less">
     <!-- at:end -->
+    <script>
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    </script>
     <style>
     <% _.each(sections, function(elem) { %>
       input[type=checkbox][id=<%- elem.id ? elem.id : elem.name %>]:checked ~ code [id=<%- elem.id ? elem.id : elem.name %>-expand] {
